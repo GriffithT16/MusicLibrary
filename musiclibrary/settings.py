@@ -70,6 +70,10 @@ TEMPLATES = [
     },
 ]
 
+# REST_FRAMEWORK = {
+#     'COERCE'
+# }
+
 WSGI_APPLICATION = 'musiclibrary.wsgi.application'
 
 
