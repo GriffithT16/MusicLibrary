@@ -17,4 +17,13 @@ def songs_list(request):
         serializer.save()
         return Response(serializer.data, status=201)
 
+@api_view(['GET'])
+def song_detail(request, pk):
+    try:
+        song = Song.objects.get(pk=pk)
+        serializer = SongSerializer(song)
+        return Response(serializer.data)
+
+    except Song.DoesNotExist:
+        return Response(status=404)
 
